@@ -6,9 +6,9 @@ from haversine import haversine
 dotenv.load_dotenv('.env', override=True)
 import pandas as pd
 
-df_bus = pd.read_csv('bus.csv', encoding='euc-kr')
-df_subway = pd.read_csv('subway.csv', encoding='euc-kr')
-df_bike = pd.read_csv('bike.csv', encoding='cp949')
+df_bus = pd.read_csv('data/bus.csv', encoding='euc-kr')
+df_subway = pd.read_csv('data/subway.csv', encoding='euc-kr')
+df_bike = pd.read_csv('data/bike.csv', encoding='cp949')
 
 def transform(coord, input_coord='WCONGNAMUL', output_coord='WGS84'):
     URL = f'https://dapi.kakao.com/v2/local/geo/transcoord.json?x={coord[0]}&y={coord[1]}&input_coord={input_coord}&output_coord={output_coord}'
